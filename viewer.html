@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Visor PDF</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- PDF.js (correcto) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <div class="bg-white shadow px-6 py-3 flex justify-between items-center">
+    <h1 id="title" class="font-semibold text-gray-700">Documento</h1>
+  </div>
+
+  <!-- VIEWER -->
+  <div id="viewer"
+       class="flex-1 overflow-y-auto p-6 flex flex-col items-center space-y-6">
+  </div>
+
+  <!-- TU JS (siempre al final) -->
+  <script src="src/viewer.js"></script>
+
+</body>
+</html>

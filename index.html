@@ -95,30 +95,93 @@
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
     <!-- TopNavBar -->
-    <header
-        class="fixed top-0 w-full z-50 bg-[#061423]/60 backdrop-blur-md no-line-rule shadow-[0_32px_32px_rgba(6,20,35,0.06)]">
-        <nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <div class="text-xl font-black text-[#4cd6fb] tracking-widest uppercase">INGENIERO EN SISTEMAS</div>
+    <header class="fixed top-0 w-full z-50 bg-[#061423]/60 backdrop-blur-md shadow-[0_32px_32px_rgba(6,20,35,0.06)]">
+
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-8">
+
+            <!-- Logo -->
+            <div class="text-xl font-black text-[#4cd6fb] tracking-widest uppercase">
+                INGENIERO EN SISTEMAS
+            </div>
+
             <!-- Desktop Links -->
             <div class="hidden md:flex gap-8 items-center">
-                <a class="text-[#4cd6fb] border-b-2 border-[#4cd6fb] pb-1 font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#inicio">Inicio</a>
-                <a class="text-slate-400 hover:text-[#4cd6fb] transition-colors font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#sobre-mi">Sobre mí</a>
-                <a class="text-slate-400 hover:text-[#4cd6fb] transition-colors font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#proyectos">Projectos</a>
-                <a class="text-slate-400 hover:text-[#4cd6fb] transition-colors font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#habilidades">Habilidades</a>
-                <a class="text-slate-400 hover:text-[#4cd6fb] transition-colors font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#certificaciones">Certificaciones</a>
-                <a class="text-slate-400 hover:text-[#4cd6fb] transition-colors font-['Space_Grotesk'] font-bold tracking-tight"
-                    href="#contacto">Contacto</a>
+
+                <a href="#inicio" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Inicio
+                </a>
+
+                <a href="#sobre-mi" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Sobre mí
+                </a>
+
+                <a href="#proyectos" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Proyectos
+                </a>
+
+                <a href="#habilidades" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Habilidades
+                </a>
+
+                <a href="#certificaciones" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Certificaciones
+                </a>
+
+                <a href="#contacto" class="nav-link relative text-slate-400 hover:text-[#4cd6fb] font-bold transition-colors
+               after:content-[''] after:absolute after:left-0 after:-bottom-1
+               after:h-[2px] after:w-0 after:bg-[#4cd6fb]
+               hover:after:w-full after:transition-all after:duration-300">
+                    Contacto
+                </a>
+
             </div>
-            <button
-                class="bg-primary text-on-primary px-6 py-2 rounded-md font-bold hover:bg-primary/90 transition-all scale-95 active:scale-90 shadow-[0_0_15px_rgba(76,214,251,0.3)]">
+
+            <!-- Botón CV -->
+            <button aria-label="Descargar currículum vitae" class="hidden md:block bg-[#4cd6fb] text-[#061423] px-6 py-2 rounded-md font-bold
+            hover:bg-[#4cd6fb]/90 transition-all scale-95 active:scale-90
+            shadow-[0_0_15px_rgba(76,214,251,0.3)]" onclick="descargarCV()">
                 Descargar CV
             </button>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" aria-label="Abrir menú" class="md:hidden text-[#4cd6fb] text-3xl">
+                ☰
+            </button>
+
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden flex flex-col gap-4 px-8 py-8 pb-14 min-h-[65vh] bg-[#061423]/95 backdrop-blur-md">
+
+            <a href="#inicio" class="text-[#4cd6fb] font-bold">Inicio</a>
+            <a href="#sobre-mi" class="text-slate-300 hover:text-[#4cd6fb]">Sobre mí</a>
+            <a href="#proyectos" class="text-slate-300 hover:text-[#4cd6fb]">Proyectos</a>
+            <a href="#habilidades" class="text-slate-300 hover:text-[#4cd6fb]">Habilidades</a>
+            <a href="#certificaciones" class="text-slate-300 hover:text-[#4cd6fb]">Certificaciones</a>
+            <a href="#contacto" class="text-slate-300 hover:text-[#4cd6fb]">Contacto</a>
+
+            <button aria-label="Descargar currículum vitae"
+                class="mt-6 bg-[#4cd6fb] text-[#061423] px-4 py-2 rounded-md font-bold" onclick="descargarCV()">
+                Descargar CV
+            </button>
+
+        </div>
     </header>
     <main>
         <!-- Hero Section -->
@@ -133,16 +196,21 @@
                         Josué <br /><span class="text-primary">Cruz</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-lg mb-10 leading-relaxed">
-                        Especialista en Redes e Infraestructura IT. Diseñando sistemas de alta disponibilidad y
-                        seguridad perimetral.
+                        Soy Ingeniero en Sistemas informáticos apasionado por el mundo de las redes informáticas,
+                        me especializo en la configuración, administración y seguridad de infraestructuras de red,
+                        disfruto resolver
+                        problemas técnicos, optimizar el rendimiento de los sistemas y asegurar la conectividad
+                        eficiente en entornos corporativos,
+                        busco seguir creciendo en el área de redes y ciberinfraestructura.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button onclick="document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' })"
                             class="bg-gradient-to-br from-primary to-on-primary-container text-on-primary px-8 py-4 rounded-md font-bold text-lg hover:shadow-[0_0_25px_rgba(76,214,251,0.4)] transition-all">
                             Ver proyectos
                         </button>
                         <button
-                            class="border border-outline-variant/20 text-primary px-8 py-4 rounded-md font-bold text-lg hover:bg-surface-container-highest transition-all">
+                            class="border border-outline-variant/20 text-primary px-8 py-4 rounded-md font-bold text-lg hover:bg-surface-container-highest transition-all"
+                            onclick="descargarCV()">
                             Descargar CV
                         </button>
                     </div>
@@ -176,92 +244,95 @@
                             <div class="w-2 h-2 bg-primary rounded-sm"></div>
                             <h2 class="text-primary font-bold uppercase tracking-widest text-sm">Trayectoria</h2>
                         </div>
-                        <h3 class="text-4xl font-bold text-on-surface leading-tight">Arquitectura de Conectividad</h3>
+                        <h3 class="text-4xl font-bold text-on-surface leading-tight">Formación Académica</h3>
                     </div>
                     <div class="md:col-span-8 space-y-6 text-on-surface-variant text-lg leading-relaxed">
                         <p>
-                            Con más de 2 años de experiencia en el sector tecnológico, mi enfoque se centra en la
-                            creación de infraestructuras de red robustas, escalables y, sobre todo, seguras. He liderado
-                            implementaciones críticas que van desde la configuración avanzada de <span
-                                class="text-on-surface font-semibold">Routers y Switches Cisco</span> hasta la
-                            arquitectura de seguridad perimetral para entornos corporativos.
+                            Recientemente egresado de la carrera de Ingeniería en Sistemas informáticos,
+                            durante mi formación académica adquirí conocimientos en redes informáticas,
+                            configuración de equipos de red, direccionamiento IP, administración de redes
+                            LAN/WAN y fundamentos de seguridad informática, he desarrollado proyectos académicos
+                            enfocados en el diseño y simulación de redes.
+
                         </p>
-                        <p>
-                            Mi pasión es transformar el caos de datos en flujos de información eficientes. Especializado
-                            en soporte técnico de nivel superior y optimización de redes LAN/WAN, garantizando siempre
-                            una disponibilidad de servicio superior al 99.9%.
-                        </p>
+
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Habilidades -->
         <!-- Habilidades -->
         <section class="py-24 px-8" id="habilidades">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-16">
                     <div class="flex items-center gap-2 mb-4">
                         <div class="w-2 h-2 bg-primary rounded-sm"></div>
-                        <h2 class="text-primary font-bold uppercase tracking-widest text-sm">Expertise</h2>
+                        <h2 class="text-primary font-bold uppercase tracking-widest text-sm">Habilidades Técnicas</h2>
                     </div>
                     <h3 class="text-4xl font-bold text-on-surface">Dominio Técnico</h3>
                 </div>
+
                 <div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
-                    <!-- Skill Item -->
+
+                    <!-- FUNDAMENTOS -->
+                    <div class="col-span-2">
+                        <h4 class="text-xl font-semibold text-primary">Fundamentos de Red</h4>
+                    </div>
+
+                    <!-- TCP/IP -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <span class="text-on-surface font-medium text-lg">TCP/IP</span>
+                            <span class="text-primary font-mono">95%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
+                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Routing -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <span class="text-on-surface font-medium text-lg">Enrutamiento y conmutación</span>
+                            <span class="text-primary font-mono">85%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
+                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- TECNOLOGÍAS -->
+                    <div class="col-span-2">
+                        <h4 class="text-xl font-semibold text-primary">Tecnologías</h4>
+                    </div>
+
+                    <!-- Cisco -->
                     <div class="space-y-4">
                         <div class="flex justify-between items-end">
                             <span class="text-on-surface font-medium text-lg">Cisco Systems</span>
                             <span class="text-primary font-mono">90%</span>
                         </div>
                         <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
-                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 90%">
-                                <div
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full glow-point">
-                                </div>
-                            </div>
+                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
-                    <!-- Skill Item -->
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-end">
-                            <span class="text-on-surface font-medium text-lg">Routing &amp; Switching</span>
-                            <span class="text-primary font-mono">85%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
-                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 85%">
-                                <div
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full glow-point">
-                                </div>
-                            </div>
-                        </div>
+
+                    <!-- SEGURIDAD -->
+                    <div class="col-span-2">
+                        <h4 class="text-xl font-semibold text-primary">Seguridad</h4>
                     </div>
-                    <!-- Skill Item -->
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-end">
-                            <span class="text-on-surface font-medium text-lg">TCP/IP Stack</span>
-                            <span class="text-primary font-mono">95%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
-                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 95%">
-                                <div
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full glow-point">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Item -->
+
+                    <!-- Seguridad -->
                     <div class="space-y-4">
                         <div class="flex justify-between items-end">
                             <span class="text-on-surface font-medium text-lg">Seguridad de Redes</span>
                             <span class="text-primary font-mono">80%</span>
                         </div>
                         <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden relative">
-                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 80%">
-                                <div
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full glow-point">
-                                </div>
-                            </div>
+                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 80%"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -275,95 +346,186 @@
                     </div>
                     <h3 class="text-4xl font-bold text-on-surface">Proyectos Destacados</h3>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- CARD -->
                     <div
-                        class="md:col-span-2 group bg-surface-container-high rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 p-10 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="material-symbols-outlined text-primary text-4xl">lan</span>
-                                <div class="flex gap-2">
+                        class="group relative bg-[#111827] border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/40 transition">
+
+                        <!-- Glow effect -->
+                        <div
+                            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
+                        </div>
+
+                        <div class="relative">
+
+                            <!-- Image -->
+                            <div class="h-44 overflow-hidden">
+                                <img src="src/img/RedLAN.drawio.png"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
+                                    alt="project">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-5">
+
+                                <!-- Tag -->
+                                <span class="text-xs text-cyan-400 tracking-wide">
+                                    Red empresarial segmentada
+                                </span>
+
+
+
+                                <p class="text-gray-400 text-sm mt-2">
+                                    Implementación de una red empresarial para
+                                    la empresa TechSolutions, con el objetivo de mejorar el rendimiento.
+                                </p>
+
+                                <h2 class="text-lg font-semibold mt-1">
+                                    Servicios
+                                </h2>
+                                <!-- Tech -->
+                                <div class="flex flex-wrap gap-2 mt-4">
                                     <span
-                                        class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">Cisco
-                                        IOS</span>
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">DNS</span>
                                     <span
-                                        class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">VLANs</span>
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">HTTP</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">FTP</span>
+
+                                </div>
+
+                                <h2 class="text-lg font-semibold mt-1">
+                                    Tecnologías
+                                </h2>
+
+                                <!-- Tech -->
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">Vlan</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">DHCP</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">NAT/PAT</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">ACL</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">Routing</span>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="flex gap-3 mt-5">
+                                    <a href="#" onclick="openPDF('./docs/proyecto1.pdf', 'Dashboard UI')"
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500/20 transition">
+                                        Ver documentacion
+                                    </a>
+
+                                    <a href="proyectos/Proyecto 1.pkt"  download
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                                        Descargar
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="group relative bg-[#111827] border border-white/10 rounded-2xl overflow-hidden hover:border-purple-400/40 transition">
+
+                        <div
+                            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-purple-500/10 to-pink-500/10">
+                        </div>
+
+                        <div class="relative">
+
+                            <div class="h-44 overflow-hidden">
+                                <img src="https://via.placeholder.com/600x400"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
+                                    alt="project">
+                            </div>
+
+                            <div class="p-5">
+                                <span class="text-xs text-purple-400">Full Stack</span>
+                                <h2 class="text-lg font-semibold mt-1">E-commerce App</h2>
+
+                                <p class="text-gray-400 text-sm mt-2">
+                                    Tienda online con carrito, pagos y panel de administración.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">React</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">Node</span>
+                                </div>
+
+                                <div class="flex gap-3 mt-5">
+                                    <a href="#"
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 transition">
+                                        Demo
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                                        Código
+                                    </a>
                                 </div>
                             </div>
-                            <h4 class="text-3xl font-bold text-on-surface mb-4">Red LAN Empresarial</h4>
-                            <p class="text-on-surface-variant mb-8 max-w-xl">
-                                Rediseño completo de la infraestructura de red para una firma legal, implementando
-                                segmentación por VLANs y protocolos de redundancia para eliminar puntos únicos de falla.
-                            </p>
+
                         </div>
-                        <button onclick="window.location.href='visor.html'"
-                            class="flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all w-fit">
-                            Ver detalles
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </button>
                     </div>
-                    <!-- Project 2 -->
                     <div
-                        class="group bg-surface-container-high rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 p-10">
-                        <div class="mb-6">
-                            <span class="material-symbols-outlined text-primary text-4xl">shield_lock</span>
+                        class="group relative bg-[#111827] border border-white/10 rounded-2xl overflow-hidden hover:border-purple-400/40 transition">
+
+                        <div
+                            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-purple-500/10 to-pink-500/10">
                         </div>
-                        <h4 class="text-2xl font-bold text-on-surface mb-4">Seguridad Perimetral</h4>
-                        <p class="text-on-surface-variant mb-8">
-                            Implementación de Firewall PfSense con IDS/IPS y VPN Site-to-Site para conectar 3 sucursales
-                            de forma segura.
-                        </p>
-                        <div class="flex gap-2 mb-8 flex-wrap">
-                            <span
-                                class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">PfSense</span>
-                            <span
-                                class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">OpenVPN</span>
-                        </div>
-                        <button class="text-primary font-bold">Ver más</button>
-                    </div>
-                    <!-- Project 3 -->
-                    <div
-                        class="group bg-surface-container-high rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 p-10">
-                        <div class="mb-6">
-                            <span class="material-symbols-outlined text-primary text-4xl">monitoring</span>
-                        </div>
-                        <h4 class="text-2xl font-bold text-on-surface mb-4">Auditoría de Tráfico</h4>
-                        <p class="text-on-surface-variant mb-8">
-                            Análisis profundo utilizando Wireshark para detectar cuellos de botella y actividades
-                            sospechosas en redes de alta carga.
-                        </p>
-                        <div class="flex gap-2 mb-8 flex-wrap">
-                            <span
-                                class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">Wireshark</span>
-                            <span
-                                class="px-3 py-1 bg-surface-container rounded-full text-xs font-mono text-on-surface-variant">Linux</span>
-                        </div>
-                        <button class="text-primary font-bold">Ver más</button>
-                    </div>
-                    <!-- Project 4 -->
-                    <div
-                        class="md:col-span-2 group bg-surface-container-high rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 p-10 flex flex-col md:flex-row gap-10">
-                        <div class="flex-1">
-                            <div class="mb-6">
-                                <span class="material-symbols-outlined text-primary text-4xl">cloud_done</span>
+
+                        <div class="relative">
+
+                            <div class="h-44 overflow-hidden">
+                                <img src="https://via.placeholder.com/600x400"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
+                                    alt="project">
                             </div>
-                            <h4 class="text-3xl font-bold text-on-surface mb-4">Híbrido Cloud-Network</h4>
-                            <p class="text-on-surface-variant mb-8">
-                                Integración de infraestructura On-Premise con servicios de Azure, gestionando túneles
-                                seguros y balanceo de carga en la nube.
-                            </p>
-                            <button class="flex items-center gap-2 text-primary font-bold">Explorar Proyecto <span
-                                    class="material-symbols-outlined">north_east</span></button>
-                        </div>
-                        <div class="flex-1 bg-surface-container rounded-lg p-2 overflow-hidden">
-                            <img alt="Networking Project Topology" class="w-full h-full object-cover rounded-lg"
-                                data-alt="clean 3d render of network topology diagram with blue glowing nodes and fiber optic connections on a dark background"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDslInHjJpgmZgVSpK_64I5jroGd2rZ8u8xORcaDEB42eiw7hgekl-OKrfL-v4x5EpsgTe9PDTYMhQ2vurV7uePNZXFvvGtrNjmERUFgYqRQ5-fKuZmIKmhWd4Ne7Z1ld24SxPVbVHnkU6x1dyykzUfcpssugec_KHTYDY_GaKQ3_LB1gWzxCL4XqST1H5Wi2zNgsr8L7nLiLQrZdN3zMO7HEQ4kKA3LoaHDUyZ50AhD2PzkU_jyUogyCYZDLwGezHK5wK3oc8hqVE" />
+
+                            <div class="p-5">
+                                <span class="text-xs text-purple-400">Full Stack</span>
+                                <h2 class="text-lg font-semibold mt-1">E-commerce App</h2>
+
+                                <p class="text-gray-400 text-sm mt-2">
+                                    Tienda online con carrito, pagos y panel de administración.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">React</span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md">Node</span>
+                                </div>
+
+                                <div class="flex gap-3 mt-5">
+                                    <a href="#"
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 transition">
+                                        Demo
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex-1 text-center text-sm py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                                        Código
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </section>
+
         <!-- Certificaciones -->
         <section class="py-24 px-8" id="certificaciones">
             <div class="max-w-7xl mx-auto">
@@ -373,49 +535,68 @@
                             <div class="w-2 h-2 bg-primary rounded-sm"></div>
                             <h2 class="text-primary font-bold uppercase tracking-widest text-sm">Validación</h2>
                         </div>
-                        <h3 class="text-4xl font-bold text-on-surface">Certificaciones Oficiales</h3>
+                        <h3 class="text-4xl font-bold text-on-surface">Certificaciones & Formación</h3>
                     </div>
                     <p class="text-on-surface-variant max-w-xs">
-                        Manteniendo los más altos estándares de la industria mediante formación continua.
+                        Comprometido con el aprendizaje continuo y la mejora constante en tecnologías de red y sistemas.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Cert 1 -->
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                    <!-- Ingeniería -->
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6">
+                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6 hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                        </div>
+                        <div>
+                            <h5 class="text-on-surface font-bold text-lg">Ingeniería en Sistemas Informáticos</h5>
+                            <p class="text-on-surface-variant text-sm">Universidad Católica de El Salvador, Centro
+                                regional de Ilobasco</p>
+                        </div>
+                    </div>
+
+                    <!-- CCNA -->
+                    <div
+                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6 hover:scale-105 transition-transform duration-300">
                         <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-primary text-3xl">verified</span>
                         </div>
                         <div>
                             <h5 class="text-on-surface font-bold text-lg">CCNA</h5>
-                            <p class="text-on-surface-variant text-sm">Routing &amp; Switching</p>
+                            <p class="text-on-surface-variant text-sm">Cisco Certified Network Associate</p>
                         </div>
                     </div>
-                    <!-- Cert 2 -->
+
+                    <!-- Network+ -->
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6">
+                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6 hover:scale-105 transition-transform duration-300">
                         <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
                         </div>
                         <div>
-                            <h5 class="text-on-surface font-bold text-lg">CompTIA</h5>
-                            <p class="text-on-surface-variant text-sm">Network+</p>
+                            <h5 class="text-on-surface font-bold text-lg">Network+</h5>
+                            <p class="text-on-surface-variant text-sm">CompTIA</p>
                         </div>
                     </div>
-                    <!-- Cert 3 -->
+
+                    <!-- Azure -->
                     <div
-                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6">
+                        class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 flex items-center gap-6 hover:scale-105 transition-transform duration-300">
                         <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-primary text-3xl">cloud</span>
                         </div>
                         <div>
-                            <h5 class="text-on-surface font-bold text-lg">Azure</h5>
-                            <p class="text-on-surface-variant text-sm">Fundamentals (AZ-900)</p>
+                            <h5 class="text-on-surface font-bold text-lg">Azure Fundamentals</h5>
+                            <p class="text-on-surface-variant text-sm">AZ-900</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
+
         <!-- Contacto -->
         <section class="py-24 bg-surface-container-low px-8" id="contacto">
             <div class="max-w-7xl mx-auto">
@@ -496,16 +677,17 @@
     <footer
         class="bg-[#061423] w-full py-12 border-t border-[#283646]/15 no-line-rule tonal-shift-bg-surface-container-low">
         <div class="flex flex-col md:flex-row justify-between items-center px-10 max-w-7xl mx-auto gap-6">
-            <div class="text-lg font-bold text-[#4cd6fb] uppercase tracking-widest">IGENIERO EN SISTEMAS </div>
+            <div class="text-lg font-bold text-[#4cd6fb] uppercase tracking-widest">INGENIERO EN SISTEMAS INFORMÁTICOS
+            </div>
             <div class="flex gap-8">
                 <a class="text-slate-500 hover:text-[#4cd6fb] transition-colors duration-200 opacity-80 hover:opacity-100 font-semibold"
                     href="http://www.linkedin.com/in/josuecruzAl">LinkedIn</a>
                 <a class="text-slate-500 hover:text-[#4cd6fb] transition-colors duration-200 opacity-80 hover:opacity-100 font-semibold"
                     href="https://github.com/Josue123453">GitHub</a>
                 <a class="text-slate-500 hover:text-[#4cd6fb] transition-colors duration-200 opacity-80 hover:opacity-100 font-semibold"
-                    href="#">Twitter</a>
-                <a class="text-slate-500 hover:text-[#4cd6fb] transition-colors duration-200 opacity-80 hover:opacity-100 font-semibold"
-                    href="https://mail.google.com/">Email</a>
+                    href="mailto:josuecruzx026@gmail.com">
+                    Email
+                </a>
             </div>
             <p class="font-['Inter'] text-sm text-slate-500">
                 © 2024 josue_cruz.
