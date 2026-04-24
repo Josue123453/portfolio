@@ -126,7 +126,7 @@ window.addEventListener("scroll", () => {
 //descarga de CV
 function descargarCV() {
     const link = document.createElement("a");
-    link.href = "/docs/cv_josue_cruz.pdf";
+    link.href = "/docs/cvjosuecruz.pdf";
     link.download = "CV_Josue_Cruz.pdf";
     document.body.appendChild(link);
     link.click();
