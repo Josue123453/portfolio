@@ -125,10 +125,14 @@ window.addEventListener("scroll", () => {
 });
 //descarga de CV
 function descargarCV() {
-    const link = document.createElement("a");
-    link.href = "docs/cvjosuecruz.pdf";
-    link.download = "CV_Josue_Cruz.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    fetch("docs/cvjosuecruz.pdf")
+        .then(res => res.blob())
+        .then(blob => {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "CV_Josue_Cruz.pdf";
+            link.click();
+            URL.revokeObjectURL(url);
+        });
 }
