@@ -8,6 +8,27 @@
 
   <!-- PDF.js (correcto) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf_viewer.min.js"></script>
+  <!-- CSS IMPORTANTE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf_viewer.min.css">
+  <style>
+  /* SIN esto los clicks no llegan a los links */
+  .annotationLayer {
+    position: absolute;
+    top: 0; left: 0;
+    pointer-events: none;  /* el layer no bloquea, solo sus hijos */
+  }
+  .annotationLayer section,
+  .annotationLayer a {
+    pointer-events: all !important;  /* los links SÍ reciben clicks */
+    position: absolute;
+    cursor: pointer;
+  }
+  /* Evita que Tailwind "preflight" rompa los links del PDF */
+  .annotationLayer a {
+    display: block;
+  }
+</style>
 </head>
 
 <body class="bg-gray-100 min-h-screen flex flex-col">
